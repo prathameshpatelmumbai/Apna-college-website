@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: white;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #0e0c07;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #868581,
+    0 0 50px #bbbbbb,
+    0 0 100px #131515;
+    animation: animate 15s linear 1;
+    animation-duration: calc(200s/var(--i));
+    animation-iteration-count: infinite;
+}
+.bubbles p img{
+    width: 650px;
+    margin-bottom: 100px;
+    animation-name: apnacollege;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+}
+
+.bubbles span:nth-child(even){
+    background: #da8300;
+    box-shadow: 0 0 0 10px #ff961ea2,
+    0 0 50px #ffdf2d,
+    0 0 100px #ffb847;
+}
+@keyframes animate
+{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-15vh) scale(1);
+    }
+}
+@keyframes apnacollege{
+    from{transform: (-200px)}
+    to{transform: (1000px)}
+}
+.bg-container{
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, rgb(255, 154, 2), rgb(219, 120, 0), rgb(255, 255, 255));
+    background-size: 600% 600%;
+    animation:bgAnimatedGradient 8s infinite linear;
+}
+@keyframes bgAnimatedGradient{
+    0%{
+        background-position: 0 85%;
+    }
+    50%{
+        background-position: 100% 20%;
+    }
+    100%{
+        background-position: 0% 85%;
+    }
+}
+.navbar{
+    float: right;
+    overflow: visible;
+}
+.bookobj{
+    float: right;
+    width: 300px;
+}
+.bubbles p{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #0e0c07;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #868581,
+    0 0 50px #bbbbbb,
+    0 0 100px #131515;
+    animation: logistic 15s linear 1;
+    animation-duration: calc(100s/var(--i));
+    animation-iteration-count: 1;
+}
+@keyframes logistic
+{
+    0%{
+        transform: translateY(50vh) scale(0);
+    }
+    100%{
+        transform: translateY(-5vh) scale(1);
+    }
+}
+#aside{
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: calc(50%-300px);
+    right: 0;
+    border-color: transparent;
+}
+#aside img,model-viewer
+{
+    height: 700px;
+    width: 700px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: transparent;
+    margin-left: 140px;
+}
+.btn{
+    font-family: "roboto",sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    background: white;
+    width: 160px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #da8300;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, );
+    bottom: 0;
+    left: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+.btn:hover, .btn:focus, .btn:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.text{
+    bottom: 0;
+    margin-top: 450px;
+    margin-left: 250px;
+}
+.head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 700px;
+}
+.head ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.head ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+.head ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: rgb(255, 255, 255);
+    border-radius: 17px;
+    background: linear-gradient(to right,rgb(255, 204, 19), rgb(255, 167, 3));
+}
+.head ul li a:hover,
+.head ul li a:active{
+    background: #000000;
+    color: rgb(255, 187, 28);
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section h3{
+    position: relative;
+    color: #fff;
+    font-size: 12cm;
+    text-transform: uppercase;
+    font-weight: 800;
+    z-index: 2;
+    transition: 2s;
+}
+section h3:hover{
+    filter: blur(10px);
+    transform: scale(1.2);
+}
+section img{
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 140%;
+    height: 160%;
+    pointer-events: none;
+    filter: blur(20px);
+    transition: 2s;
+}
+section h3:hover ~ img{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 120%;
+    filter: blur(0px);
+}
+.allinone{
+    background: black;
+    padding: 400px;
+    
+}
+.testimonials{
+    position: relative;
+    max-width: 100%;
+    
+}
+.swiper {
+    width: 40%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: contain;
+    width: 200px; 
+    min-height: 400px;
+    background: #fff;
+    padding: 20px;
+}
+.contain{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.contain .card{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+.contain .card .cont{
+    padding: 80px 40px;
+    text-align: center;
+    transition: 0.5s;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.contain .card:hover .cont{
+    transform: translateY(15px);
+    opacity: 1;
+    background: linear-gradient(rgb(15, 255, 251),rgb(255, 0, 144));
+}
+.contain .card .cont h2{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+.contain .card .cont h3{
+    font-size: 1cm;
+    color: #fff;
+    z-index: 1;
+}
+.contain .card .cont p{
+    font-size: 0.4cm;
+    color: #fff;
+    font-weight: 300;
+}
+.contain .card .cont a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 05px 5 px rgba(255, 255, 255, 0.2);
+}
+.cont img{
+    width: 100px;
+}
+
+

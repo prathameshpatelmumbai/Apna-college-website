@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #161623;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(255, 157, 0),rgb(255, 52, 6));
+    clip-path: circle(30% at right 70%);
+}
+body::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(4, 230, 255),rgb(0, 120, 239));
+    clip-path: circle(20% at 10% 10%);
+}
+.contain{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.contain .card{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+.contain .card .cont{
+    padding: 80px 40px;
+    text-align: center;
+    transition: 0.5s;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.contain .card:hover .cont{
+    transform: translateY(15px);
+    opacity: 1;
+    background: linear-gradient(rgb(15, 255, 251),rgb(255, 0, 123));
+}
+.contain .card .cont h2{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+.contain .card .cont h3{
+    font-size: 1cm;
+    color: #fff;
+    z-index: 1;
+}
+.contain .card .cont p{
+    font-size: 0.4cm;
+    color: #fff;
+    font-weight: 300;
+}
+.contain .card .cont a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 05px 5 px rgba(255, 255, 255, 0.2);
+}
+.cont img{
+    width: 100px;
+}
